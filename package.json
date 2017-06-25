@@ -1,0 +1,15 @@
+{
+  "name": "hypergoogle",
+  "version": "0.0.1",
+  "description": "Search Google from Hyper",
+  "keywords": [
+    "hyperterm",
+    "hyper",
+    "google"
+  ],
+  "author": "Thomas O'Brien <tbobrien612@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasbeta/hypergoogle"
+  }
+}
