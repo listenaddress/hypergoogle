@@ -48,21 +48,55 @@ exports.decorateTerm = (Term, { React, notify }) => {
       ];
 
       if (this.state.searchText) {
-        const input = React.createElement(
-          'input',
-          {
-            onChange: this._onChange,
-            value: this.state.searchText
-          }
+        const div = React.createElement(
+          'div',
+          { style: {
+            position: 'absolute',
+            right: '-1px',
+            background: 'black',
+            color: 'white',
+            border: '1px solid white',
+            padding: '5px 10px',
+            paddingBottom: '8px',
+            zIndex: '100',
+            fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+          }},
+          React.createElement(
+            'input',
+            {
+              onChange: this._onChange,
+              value: this.state.searchText,
+              style: {
+                background: 'black',
+                color: 'white',
+                border: 'none',
+                fontFamily: 'inherit',
+                width: '350px',
+                outline: 'none',
+              },
+            }
+          ),
+          React.createElement(
+            'button',
+            {
+              onClick: this._onSearch,
+              style: {
+                bottom: '-24px',
+                right: '-1px',
+                borderRadius: '0px',
+                border: '0px',
+                width: '55px',
+                height: '23px',
+                backgroundColor: 'yellow',
+                position: 'absolute',
+                cursor: 'pointer',
+              },
+            },
+            'Search'
+          )
         );
 
-        const button = React.createElement(
-          'button',
-          {onClick: this._onSearch},
-          'Search'
-        );
-
-        children.unshift([input, button]);
+        children.unshift(div);
       }
 
       return React.createElement('div', {style: {width: '100%', height: '100%', position: 'relative'}}, children);
