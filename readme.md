@@ -10,7 +10,7 @@ Hyper extension that lets you open a Google search from the terminal.
 
 [Install Hyper](https://hyper.is/#installation) and add `hypergoogle` to `plugins` in `~/.hyper.js`.
 
-Highlight some text and you should get the search input populated with you're selection.
+Highlight some text and you should get the search input populated with your selection.
 
 ## License
 
