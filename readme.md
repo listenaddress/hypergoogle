@@ -1,5 +1,7 @@
 # hypergoogle
 
+*Note: some update broke this. Idk what. https://github.com/thomasbeta/hypergoogle/issues/4*
+
 Hyper extension that lets you open a Google search from the terminal.
 
 <a href="https://giphy.com/gifs/3oKIP8uQwpm3XHalAQ/fullscreen" target="_blank">
