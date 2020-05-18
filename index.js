@@ -48,18 +48,29 @@ exports.decorateTerm = (Term, { React, notify }) => {
       ];
 
       if (this.state.searchText) {
+        const theme = {
+          backgroundColor: this.props.backgroundColor,
+          fontFamily: this.props.fontFamily,
+          fontSize: `${this.props.fontSize}px`,
+          lineHeight: `${this.props.fontSize * 2}px`,
+          padding: this.props.padding,
+          inputColor: this.props.foregroundColor,
+          buttonColor: this.props.colors.green,
+          border: `2px solid ${this.props.colors.cyan}`,
+        }
+
         const div = React.createElement(
           'div',
           { style: {
             position: 'absolute',
-            right: '-1px',
-            padding: '5px 10px',
-            paddingBottom: '8px',
-            border: '1px solid white',
-            backgroundColor: 'black',
-            color: 'white',
+            top: '0',
+            right: '0',
+            padding: '0 10px',
+            backgroundColor: theme.backgroundColor,
             zIndex: '100',
-            fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+            fontFamily: theme.fontFamily,
+            fontSize: theme.fontSize,
+            lineHeight: theme.lineHeight
           }},
           React.createElement(
             'input',
@@ -67,11 +78,16 @@ exports.decorateTerm = (Term, { React, notify }) => {
               onChange: this._onChange,
               value: this.state.searchText,
               style: {
-                width: '350px',
-                backgroundColor: 'black',
-                color: 'white',
-                border: 'none',
+                width: '240px',
+                backgroundColor: 'inherit',
+                color: theme.inputColor,
+                border: theme.border,
+                position: 'relative',
+                right: '56px',
+                padding: theme.padding,
                 fontFamily: 'inherit',
+                fontSize: 'inherit',
+                lineHeight: 'inherit',
                 outline: 'none',
               },
             }
@@ -82,14 +98,16 @@ exports.decorateTerm = (Term, { React, notify }) => {
               onClick: this._onSearch,
               style: {
                 position: 'absolute',
-                width: '55px',
-                height: '23px',
-                bottom: '-24px',
-                right: '-1px',
+                width: 'auto',
+                right: '0',
                 fontFamily: 'inherit',
-                borderRadius: '0px',
-                border: '0px',
-                backgroundColor: 'yellow',
+                border: theme.border,
+                backgroundColor: 'inherit',
+                padding: theme.padding,
+                color: theme.buttonColor,
+                fontSize: 'inherit',
+                lineHeight: 'inherit',
+                outline: 'none',
                 cursor: 'pointer',
               },
             },
